@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond Beauty Pure Harmony Spa | Sandown, Sandton</title>
+<meta name="description" content="Beyond Beauty Pure Harmony Spa — spa treatments, body scrubs and body wraps in Sandown, Sandton. Rated 3.8 from 12 reviews. Book your visit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2B2A24;
+    --base:#F7F2E9;
+    --card:#FFFFFF;
+    --sage:#7C8B6F;
+    --sage-deep:#5E6E52;
+    --gold:#C9A66B;
+    --line:#E8DFCB;
+    --muted:#6E6657;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope',sans-serif;
+    background:var(--base);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Spectral',serif;
+    line-height:1.2;
+    color:var(--ink);
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;}
+  @media(max-width:700px){section{padding:60px 0;}}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:14px 28px;border-radius:2px;font-weight:600;font-size:14px;
+    font-family:'Manrope',sans-serif;text-transform:uppercase;letter-spacing:0.8px;
+    border:1.5px solid transparent;cursor:pointer;transition:all .2s ease;
+  }
+  .btn-sage{background:var(--sage-deep);color:#fff;}
+  .btn-sage:hover{background:var(--ink);}
+  .btn-outline{background:transparent;border-color:rgba(255,255,255,0.5);color:#fff;}
+  .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+  .btn-outline-dark{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-outline-dark:hover{background:var(--ink);color:#fff;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,242,233,0.93);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{font-family:'Spectral',serif;font-weight:500;font-size:21px;letter-spacing:0.3px;}
+  .logo em{color:var(--sage-deep);font-style:italic;}
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-cta .btn{padding:11px 20px;font-size:12.5px;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;}
+
+  @media(max-width:860px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .nav.open .nav-links{
+      display:flex;flex-direction:column;align-items:flex-start;gap:18px;
+      position:absolute;top:66px;left:0;right:0;background:var(--base);
+      padding:24px;border-bottom:1px solid var(--line);
+    }
+  }
+
+  /* Hero */
+  .hero{position:relative;padding:0;}
+  .hero-bg{position:relative;height:600px;overflow:hidden;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(43,42,36,0.80) 15%, rgba(43,42,36,0.40) 55%, rgba(43,42,36,0.1) 100%);
+  }
+  .hero-content{position:absolute;inset:0;display:flex;align-items:center;z-index:2;}
+  .hero-content .wrap{width:100%;}
+  .hero-inner{max-width:580px;}
+  .eyebrow-light{
+    display:inline-block;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;
+    color:#E4DEC4;font-weight:600;margin-bottom:18px;
+  }
+  .hero h1{font-size:50px;font-style:italic;font-weight:500;color:#fff;margin-bottom:20px;letter-spacing:-0.3px;}
+  @media(max-width:600px){.hero h1{font-size:34px;}}
+  .hero p.lede{font-size:17px;color:#EDE7D8;max-width:460px;margin-bottom:30px;font-family:'Manrope',sans-serif;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  @media(max-width:700px){.hero-bg{height:520px;}}
+
+  /* Rating strip */
+  .rating-strip{background:var(--ink);padding:0;}
+  .rs-grid{display:flex;flex-wrap:wrap;justify-content:space-between;}
+  .rs-cell{
+    padding:28px 24px;flex:1;min-width:160px;text-align:center;
+    border-right:1px solid rgba(255,255,255,0.1);
+  }
+  .rs-cell:last-child{border-right:none;}
+  @media(max-width:700px){.rs-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .rs-cell:last-child{border-bottom:none;}}
+  .rs-cell .big{font-family:'Spectral',serif;font-size:26px;font-weight:500;color:var(--gold);margin-bottom:4px;}
+  .rs-cell .lbl{font-size:12px;color:#C9C2AE;text-transform:uppercase;letter-spacing:0.6px;font-weight:600;}
+
+  /* Section head */
+  .section-head{max-width:580px;margin-bottom:52px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .eyebrow{
+    font-size:12.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+    color:var(--sage-deep);margin-bottom:12px;display:block;
+  }
+  .section-head h2{font-size:36px;font-style:italic;font-weight:500;margin-bottom:14px;}
+  .section-head p{color:var(--muted);font-size:16px;}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:32px;}}
+  .about-grid img{border-radius:3px;height:420px;object-fit:cover;}
+  @media(max-width:860px){.about-grid img{height:300px;}}
+  .about-text p{color:var(--muted);margin-bottom:16px;font-size:15.5px;}
+  .rating-row{
+    display:flex;align-items:center;gap:12px;margin-top:24px;padding:16px 20px;
+    background:#EFEADA;border-radius:3px;border-left:3px solid var(--gold);
+  }
+  .rating-row .stars{color:var(--gold);font-size:17px;letter-spacing:1px;}
+  .rating-row .txt{font-size:14px;color:var(--ink);font-weight:700;}
+  .rating-row .txt span{font-weight:500;color:var(--muted);}
+
+  /* Services */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
+  @media(max-width:800px){.svc-grid{grid-template-columns:1fr;gap:16px;}}
+  .svc-card{position:relative;height:400px;overflow:hidden;}
+  @media(max-width:800px){.svc-card{border-radius:3px;}}
+  .svc-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .svc-card:hover img{transform:scale(1.05);}
+  .svc-card::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(0deg, rgba(43,42,36,0.85) 0%, rgba(43,42,36,0.1) 55%);
+  }
+  .svc-label{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:30px 26px;}
+  .svc-label h3{color:#fff;font-size:25px;font-style:italic;margin-bottom:6px;}
+  .svc-label p{color:#E4DEC4;font-size:13.5px;font-family:'Manrope',sans-serif;}
+
+  .note{
+    margin-top:36px;background:#FBF6EC;border:1px solid #EFE1C8;
+    border-radius:3px;padding:18px 22px;font-size:13.5px;color:#7A5C33;
+    border-left:3px solid var(--gold);
+  }
+
+  /* Visit / contact */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  @media(max-width:800px){.visit-grid{grid-template-columns:1fr;}}
+  .visit-card{
+    background:var(--card);border:1px solid var(--line);border-radius:3px;padding:34px;
+  }
+  .visit-card h3{font-size:21px;font-style:italic;margin-bottom:20px;}
+  .hours-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 0;font-size:14.5px;border-bottom:1px solid var(--line);
+  }
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row .d{color:var(--ink);font-weight:600;}
+  .hours-row .t{color:var(--muted);}
+  .hours-row.today .d, .hours-row.today .t{color:var(--sage-deep);font-weight:700;}
+
+  .info-line{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);}
+  .info-line:last-child{border-bottom:none;}
+  .info-line .ico{
+    width:36px;height:36px;border-radius:50%;background:#EFEADA;color:var(--sage-deep);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;
+  }
+  .info-line .txt .t1{font-size:11.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+  .info-line .txt .t2{font-size:15.5px;font-weight:600;color:var(--ink);font-family:'Manrope',sans-serif;}
+  .info-line a.t2:hover{color:var(--sage-deep);}
+  .directions{margin-top:18px;display:inline-block;font-size:13.5px;font-weight:700;color:var(--sage-deep);letter-spacing:0.3px;}
+  .directions:hover{text-decoration:underline;}
+
+  /* CTA band */
+  .cta-band{
+    position:relative;background:var(--ink);color:#fff;text-align:center;overflow:hidden;
+  }
+  .cta-band::before{
+    content:"";position:absolute;inset:0;
+    background:url('https://images.unsplash.com/photo-1693578538512-fc66f318c833?auto=format&fit=crop&w=1600&q=60') center/cover;
+    opacity:0.18;
+  }
+  .cta-band .wrap{position:relative;z-index:1;}
+  .cta-band h2{font-size:34px;font-style:italic;margin-bottom:16px;color:#fff;}
+  .cta-band p{color:#DCD6C4;max-width:480px;margin:0 auto 32px;font-size:15.5px;font-family:'Manrope',sans-serif;}
+  .cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+  /* Footer */
+  footer{padding:36px 0;border-top:1px solid var(--line);}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-row p{font-size:13px;color:var(--muted);}
+
+  /* Mobile sticky bar */
+  .m-bar{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:#fff;border-top:1px solid var(--line);
+    padding:10px 14px;gap:10px;
+    box-shadow:0 -8px 24px rgba(43,42,36,0.12);
+  }
+  .m-bar .btn{flex:1;padding:12px;font-size:12.5px;}
+  @media(max-width:700px){
+    .m-bar{display:flex;}
+    body{padding-bottom:70px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="nav" id="nav">
+      <a href="#top" class="logo">Beyond Beauty <em>Spa</em></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Treatments</a>
+        <a href="#visit">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-outline-dark" href="https://wa.me/27826638891?text=Hi%20Beyond%20Beauty%20Pure%20Harmony%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20a%20booking." target="_blank" rel="noopener">Enquire</a>
+        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1630595271375-5073a6c0638b?auto=format&fit=crop&w=1600&q=80" alt="Relaxed guest in a white robe at a serene spa">
+      <div class="hero-content">
+        <div class="wrap">
+          <div class="hero-inner">
+            <span class="eyebrow-light">Sandown, Sandton</span>
+            <h1>A moment of pure harmony.</h1>
+            <p class="lede">Beyond Beauty Pure Harmony Spa offers spa treatments, body scrubs and body wraps in the heart of Sandown, Sandton.</p>
+            <div class="hero-actions">
+              <a class="btn btn-sage" href="https://wa.me/27826638891?text=Hi%20Beyond%20Beauty%20Pure%20Harmony%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20a%20booking." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+              <a class="btn btn-outline" href="tel:+27826638891">082 663 8891</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATING STRIP -->
+  <div class="rating-strip">
+    <div class="wrap rs-grid">
+      <div class="rs-cell"><div class="big">3.8 ★</div><div class="lbl">From 12 Reviews</div></div>
+      <div class="rs-cell"><div class="big">Sandown</div><div class="lbl">Sandton, Johannesburg</div></div>
+      <div class="rs-cell"><div class="big">7 Days</div><div class="lbl">Open Mon–Sun</div></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <img src="https://images.unsplash.com/photo-1611073615830-9f76902c10fe?auto=format&fit=crop&w=900&q=80" alt="Relaxing hand massage at a spa">
+      <div class="about-text">
+        <span class="eyebrow">The spa</span>
+        <h2>Spa &amp; beauty in Sandown</h2>
+        <p>Beyond Beauty Pure Harmony Spa is a spa and beauty salon based on the 2nd Floor, opposite Imizizi, on Daisy Street in Sandown, Sandton.</p>
+        <p>For a full treatment menu, durations and pricing, please get in touch directly — our team can talk you through what's available and help you book.</p>
+        <div class="rating-row">
+          <span class="stars">★★★★</span>
+          <span class="txt">3.8 <span>out of 5, based on 12 Google reviews</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">What we offer</span>
+        <h2>Spa treatments &amp; body therapies</h2>
+        <p>Our publicly listed service categories — enquire for the full treatment menu.</p>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=80" alt="Hot stone spa treatment with flowers">
+        <div class="svc-label"><h3>Spa Treatments</h3><p>Relaxing spa experiences for body and mind</p></div>
+      </div>
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1712638932314-e2b185ca0930?auto=format&fit=crop&w=800&q=80" alt="Leg massage with towel at a spa">
+        <div class="svc-label"><h3>Body Scrubs</h3><p>Exfoliating treatments to refresh and renew</p></div>
+      </div>
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1693578538512-fc66f318c833?auto=format&fit=crop&w=800&q=80" alt="Serene spa treatment room">
+        <div class="svc-label"><h3>Body Wraps</h3><p>Nourishing wraps for soft, cared-for skin</p></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="note">The photos on this page are stock images standing in for real treatment-room and premises photos — swap them for your own before this goes live. We haven't listed specific treatment names, durations or prices here since a full menu hasn't been confirmed — enquire directly for current offerings and rates.</div>
+    </div>
+  </section>
+
+  <!-- VISIT / CONTACT -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Based in Sandown, Sandton</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <h3>Hours</h3>
+          <div id="hoursTable">
+            <div class="hours-row" data-day="1"><span class="d">Monday</span><span class="t">09:00 – 20:00</span></div>
+            <div class="hours-row" data-day="2"><span class="d">Tuesday</span><span class="t">09:00 – 20:00</span></div>
+            <div class="hours-row" data-day="3"><span class="d">Wednesday</span><span class="t">09:00 – 20:00</span></div>
+            <div class="hours-row" data-day="4"><span class="d">Thursday</span><span class="t">09:00 – 20:00</span></div>
+            <div class="hours-row" data-day="5"><span class="d">Friday</span><span class="t">09:00 – 20:00</span></div>
+            <div class="hours-row" data-day="6"><span class="d">Saturday</span><span class="t">09:00 – 20:00</span></div>
+            <div class="hours-row" data-day="0"><span class="d">Sunday</span><span class="t">12:00 – 17:00</span></div>
+          </div>
+        </div>
+        <div class="visit-card">
+          <h3>Contact &amp; Location</h3>
+          <div class="info-line">
+            <div class="ico">📍</div>
+            <div class="txt">
+              <div class="t1">Address</div>
+              <div class="t2">2nd Floor, opposite Imizizi, 135 Daisy St, Sandown, Sandton, 2196</div>
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="ico">📞</div>
+            <div class="txt">
+              <div class="t1">Phone</div>
+              <a class="t2" href="tel:+27826638891">082 663 8891</a>
+            </div>
+          </div>
+          <div class="info-line">
+            <div class="ico">💬</div>
+            <div class="txt">
+              <div class="t1">WhatsApp</div>
+              <a class="t2" href="https://wa.me/27826638891?text=Hi%20Beyond%20Beauty%20Pure%20Harmony%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20a%20booking." target="_blank" rel="noopener">Message us</a>
+            </div>
+          </div>
+          <a class="directions" href="https://www.google.com/maps/search/?api=1&query=Beyond+Beauty+Pure+Harmony+Spa+135+Daisy+St+Sandown+Sandton" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ready for a little harmony?</h2>
+      <p>Get in touch to ask about treatments and book your visit.</p>
+      <div class="cta-actions">
+        <a class="btn btn-sage" href="https://wa.me/27826638891?text=Hi%20Beyond%20Beauty%20Pure%20Harmony%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20a%20booking." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+        <a class="btn btn-outline" href="tel:+27826638891">Call 082 663 8891</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <p>&copy; <span id="year"></span> Beyond Beauty Pure Harmony Spa</p>
+    <p>Site by SXI Digital</p>
+  </div>
+</footer>
+
+<!-- Mobile sticky action bar -->
+<div class="m-bar">
+  <a class="btn btn-sage" href="https://wa.me/27826638891?text=Hi%20Beyond%20Beauty%20Pure%20Harmony%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20a%20booking." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-outline-dark" href="tel:+27826638891">Call</a>
+</div>
+
+<script>
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  burger.addEventListener('click', function(){
+    var isOpen = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Highlight today's row using Johannesburg SAST time (UTC+2, no DST)
+  var sast = new Date(Date.now() + 2*60*60*1000);
+  var day = sast.getUTCDay();
+  var rows = document.querySelectorAll('#hoursTable .hours-row');
+  rows.forEach(function(row){
+    if(parseInt(row.getAttribute('data-day'), 10) === day){
+      row.classList.add('today');
+    }
+  });
+</script>
+
+</body>
+</html>
